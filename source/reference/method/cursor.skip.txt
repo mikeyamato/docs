@@ -42,7 +42,7 @@ paginate a collection in :term:`natural order`:
    function printStudents(pageNumber, nPerPage) {
      print( "Page: " + pageNumber );
      db.students.find()
-                .skip( pageNumber > 0 ? ( ( pageNumber - 1 ) * nPerPage ) : 0 )
+                .skip( pageNumber > 0 ? ( pageNumber * nPerPage ) : 0 )
                 .limit( nPerPage )
                 .forEach( student => {
                   print( student.name );
